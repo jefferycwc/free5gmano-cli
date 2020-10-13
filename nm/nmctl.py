@@ -306,6 +306,7 @@ def register_plugin(name, folder):
 @get.command('plugin')
 @click.argument('plugin_name', required=False)
 def get_plugin(plugin_name):
+    print("cli: get plugin (nmctl.py 309)")
     if plugin_name is None:
         plugin_name = ''
     response = api.get_service_mapping_plugin(plugin_name)

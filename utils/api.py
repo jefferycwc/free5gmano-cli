@@ -57,6 +57,7 @@ def register_service_mapping_plugin(data, files):
 
 
 def get_service_mapping_plugin(name):
+    print("cli: get plugin api (api.py 60)")
     register_plugin_url = service_mapping_url.format('plugin', 'management', name)
     return requests.get(register_plugin_url)
 
