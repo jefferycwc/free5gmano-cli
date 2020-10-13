@@ -276,6 +276,7 @@ def delete_template(template_id):
 @click.argument('name', required=True)
 @click.option('-f', '--folder', required=True, help='Project file path')
 def register_plugin(name, folder):
+    print("cli: register plugin (nmctl.py 279)")
     data = {'name': name}
 
     os.chdir(os.path.abspath(folder))
