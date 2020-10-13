@@ -51,6 +51,7 @@ def delete_moi(model_name, identify, scope_type, scope_level, filter):
 
 
 def register_service_mapping_plugin(data, files):
+    print("cli: register plugin api (api.py 54)")
     register_plugin_url = service_mapping_url.format('plugin', 'management', '')
     return requests.post(register_plugin_url, files=files, data=data, headers=zip_headers)
 
