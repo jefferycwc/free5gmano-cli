@@ -62,6 +62,9 @@ def allocate():
 def deallocate():
     pass
 
+@cli.group(context_settings=CONTEXT_SETTINGS)
+def activate():
+    pass
 
 @create.command('nsst')
 @click.argument('template_id', nargs=3)
@@ -402,3 +405,7 @@ def deallocate_nssi(nss_instance_id):
     else:
         click.echo('OperationFailed')
 
+@activate.command('EM')
+def Activate_EM():
+    click.echo('Activate EM...')
+    os.system('python em.py')
