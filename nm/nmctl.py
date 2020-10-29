@@ -408,4 +408,4 @@ def deallocate_nssi(nss_instance_id):
 @activate.command('EM')
 def Activate_EM():
     click.echo('Activate EM...')
-    os.system('python3 em.py')
+    os.system('python em.py')
