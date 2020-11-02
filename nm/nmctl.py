@@ -409,3 +409,8 @@ def deallocate_nssi(nss_instance_id):
 def Activate_EM():
     click.echo('Activate EM...')
     os.system('python em.py')
+
+@activate.command('free5GC')
+def Activate_free5GC();
+    click.echo('Activate free5GC...')
+    os.system('python vnf_start.py')
