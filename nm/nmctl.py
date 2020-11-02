@@ -411,6 +411,6 @@ def Activate_EM():
     os.system('python em.py')
 
 @activate.command('free5GC')
-def Activate_free5GC();
+def Activate_free5GC():
     click.echo('Activate free5GC...')
     os.system('python vnf_start.py')
