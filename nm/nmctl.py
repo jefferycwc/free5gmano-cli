@@ -408,7 +408,7 @@ def deallocate_nssi(nss_instance_id):
 @activate.command('EM')
 def Activate_EM():
     click.echo('Activate EM...')
-    os.chdir("/home/free5gmano/free5gmano/fault_management")
+    os.chdir("/home/free5gmano/free5gmano/fault_management/EM")
     os.system('python EM_master.py')
 
 @activate.command('free5GC')
