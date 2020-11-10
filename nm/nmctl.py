@@ -415,4 +415,4 @@ def Activate_EM():
 def Activate_free5GC():
     click.echo('Activate free5GC...')
     os.chdir("/home/free5gmano/fault_management")
-    os.system('python vnf_start.py')
+    os.system('python3 vnf_start.py')
