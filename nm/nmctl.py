@@ -406,10 +406,11 @@ def deallocate_nssi(nss_instance_id):
         click.echo('OperationFailed')
 
 @activate.command('EM')
+@click.argument('vnf_name', required=True)
 def Activate_EM():
     click.echo('Activate EM...')
     os.chdir("/home/free5gmano/fault_management/EM")
-    os.system('python3 em.py')
+    os.system('python3 em.py %s',vnf_name)
 
 @activate.command('free5GC')
 def Activate_free5GC():
