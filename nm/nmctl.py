@@ -413,7 +413,13 @@ def Activate_EM(vnf_name):
     os.system('python3 em.py %s' % vnf_name)
 
 @activate.command('free5GC')
-def Activate_free5GC():
-    click.echo('Activate free5GC...')
-    os.chdir("/home/free5gmano/fault_management")
-    os.system('python3 vnf_start.py')
+@click.option('-t', '--nf_type', required=True)
+def Activate_free5GC(nf_type):
+    if nf_type=='vnfs':
+        click.echo('Activate free5GC VNFs...')
+        os.chdir("/home/free5gmano/fault_management")
+        os.system('python3 vnf_start.py')
+    else:
+        click.echo('Activate free5GC PNFs...')
+        os.chdir("/home/free5gmano/fault_management")
+        os.system('python3 pnf_start.py')
