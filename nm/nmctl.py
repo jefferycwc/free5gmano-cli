@@ -66,6 +66,10 @@ def deallocate():
 def activate():
     pass
 
+@cli.group(context_settings=CONTEXT_SETTINGS)
+def terminate():
+    pass
+
 @create.command('nsst')
 @click.argument('template_id', nargs=3)
 @click.option('-n', '--nfvo', required=True)
@@ -423,3 +427,8 @@ def Activate_free5GC(nf_type):
         click.echo('Activate free5GC PNFs...')
         os.chdir("/home/free5gmano/fault_management")
         os.system('python3 pnf_start.py')
+
+@terminate.command('free5GC')
+def Terminate_free5GC():
+    os.chdir("/home/free5gmano/fault_management")
+    os.system('python3 pnf_terminate.py')
