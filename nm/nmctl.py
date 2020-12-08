@@ -411,11 +411,14 @@ def deallocate_nssi(nss_instance_id):
 
 @activate.command('EM')
 @click.option('-n', '--nf_name', required=True)
-def Activate_EMS(nf_name):
+@click.option('-t', '--nf_type', required=True)
+def Activate_EMS(nf_name,nf_type):
     click.echo('Activate EM...')
     os.chdir("/home/free5gmano/fault_management/EMS")
-    os.system('python3 ems_vnf.py %s' % nf_name)
-
+    if nf_type == 'vnf':
+        os.system('python3 ems_vnf.py %s' % nf_name)
+    else:
+        os.system('python3 ems_pnf.py %s' % nf_name)
 @activate.command('free5GC')
 @click.option('-t', '--nf_type', required=True)
 def Activate_free5GC(nf_type):
